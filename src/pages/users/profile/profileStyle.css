@@ -1,0 +1,87 @@
+.profile-container {
+    width: 100%;
+}
+
+.profile-backdrop {
+    width: 100%;
+    position: relative;
+}
+
+.profile-backdrop img {
+    width: 100%;
+}
+
+.profile-dp {
+    position: absolute;
+    top: 75%;
+    left: 1rem;
+}
+
+.profile-dp img {
+    width: 8rem;
+    height: 8rem;
+    max-width: 15rem;
+    max-height: 15rem;
+    border-radius: 5rem;
+    border: 5px solid black;
+}
+
+.profile-info-container {
+    height: 13rem;
+    border-bottom: 2px solid gray;
+}
+
+.profile-info-handle {
+    color: gray;
+}
+
+.edit-profile {
+    height: 25%;
+}
+
+.edit-profile button {
+    height: 2.5rem;
+    margin: 1rem;
+    width: 10rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    border: 0;
+}
+
+.profile-msg-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.profile-msg-btn:hover {
+    cursor: pointer;
+}
+
+.follow-button:hover {
+    background-color: rgb(231, 230, 230);
+}
+
+.profile-info {
+    margin-top: 1%;
+}
+
+.unfollow-button {
+    background-color: rgb(35, 186, 246);
+    color: white;
+}
+
+.unfollow-button:hover {
+    background-color: red;
+}
+
+.unfollow-button-unfollow {
+    display: none
+}
+
+.unfollow-button:hover .unfollow-button-following {
+    display: none
+}
+
+.unfollow-button:hover .unfollow-button-unfollow {
+    display: block
+}

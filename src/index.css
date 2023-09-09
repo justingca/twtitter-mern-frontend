@@ -1,13 +1,733 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  font-size: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: black !important;
+}
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  width: 25rem;
+  background-color: black;
+  border-right: 1px solid gray;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+.mobile-nav-toggle {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 1rem;
+  z-index: 9999;
+  display: none;
+  font-size: 1.8rem;
+}
+
+.mobile-nav-logo {
+  color: white;
+  position: absolute;
+  font-size: 1.8rem;
+  left: 45%;
+  display: none;
+}
+
+.navi-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 15rem;
+}
+
+.navi-link {
+  text-decoration: none;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+}
+
+.navi-link:hover {
+  background-color: rgb(24, 24, 24);
+  border-radius: 3rem;
+}
+
+.navi-icon {
+  font-size: 1.5rem;
+}
+
+.navi-text {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.img-form-delete {
+    vertical-align: top !important;
+    margin-left: -15px !important;
+    margin-top: -5px !important;
+    font-size: 13px;
+    padding: 3px;
+}
+
+.img-form-delete:hover {
+  cursor: pointer;
+}
+
+.count-notif {
+    vertical-align: middle;
+    margin-left: -15px;
+    margin-top: -20px;
+    font-size: 13px;
+    padding: 3px;
+}
+
+.post-button {
+  background: rgb(35, 186, 246);
+  width: 12.5rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3rem;
+  margin-left: 2rem;
+}
+
+.post-button:hover {
+  cursor: pointer;
+  background: rgb(8, 128, 176);
+}
+
+.post-button span {
+  font-weight: 700;
+  color: white;
+}
+
+.sidebar-user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar-user-container {
+  display: flex;
+  padding: 0.2rem 2rem 0.2rem 0.5rem;
+}
+
+.sidebar-user-pic img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 3rem;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.sidebar-user:hover {
+  cursor: pointer;
+}
+
+.sidebar-user-container:hover {
+  background-color: rgb(24, 24, 24);
+  border-radius: 3rem;
+}
+
+.sidebar-user-name {
+  font-weight: 700;
+}
+
+.sidebar-user-handle {
+  color: gray;
+}
+
+.user-dropup {
+  display: flex;
+  margin-left: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-dropdown-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.dropdown-item {
+  color: white !important;
+  font-size: 1.2rem;
+}
+
+.dropdown-item:hover {
+  background-color:rgb(24, 24, 24) !important;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  cursor: pointer;
+}
+
+main {
+  margin-left: 25rem;
+  margin-right: 25rem;
+  height: 100%;
+  background-color: black;
+}
+
+.explore-bar {
+  height: 100vh;
+  position: fixed;
+  width: 25rem;
+  top: 0;
+  right: 0;
+  background-color: black;
+  border-left: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar-input {
+  width: 20rem !important;
+  border-radius: 2rem !important;
+  background-color: rgb(24, 24, 24) !important;
+  border: none !important;
+  text-indent: 0.5rem;
+}
+
+.search-bar-input:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.explore-form-btn {
+  margin-top: 0.5rem;
+  background: none;
+  color: white;
+  border: none;
+}
+
+.search-bar-input::placeholder {
+  color: gray !important;
+}
+
+.subscribe-container {
+  width: 20rem;
+  border-radius: 2rem;
+  color: white;
+  margin-top: 2rem;
+  background-color: rgb(24, 24, 24);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subscribe-premium {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-button {
+  padding: 0.5rem;
+  background-color: rgb(35, 186, 246);
+  border-radius: 2rem;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.subscribe-button:hover {
+  cursor: pointer;
+  background: rgb(8, 128, 176);
+}
+
+.main-content-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  background-color: rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(1rem);
+}
+
+.main-content {
+  margin-bottom: 2.5rem;
+}
+
+.mc-buttons {
+  display: flex;
+}
+
+.mc-left-button, .mc-right-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
+}
+
+.timeline-activate {
+  text-decoration: 2px underline rgb(35, 186, 246) !important;
+  text-underline-offset: 0.5rem;
+}
+
+.mc-left-button:hover, .mc-right-button:hover {
+  background-color: rgb(24, 24, 24);
+  cursor: pointer;
+}
+
+.tweet-form-container {
+  padding-bottom: 1rem;
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.tweet-img-btn {
+  width: 1rem;
+}
+
+.tweet-form-dp {
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.tweet-form-dp img {
+  margin-top: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+}
+
+.tweet-form {
+  width: 100%;
+}
+.actual-tweet-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.tweet-form textarea {
+  resize: none;
+  border: none;
+  color: white;
+  width: 90%;
+  font-size: 1.8rem;
+}
+
+.tweet-form textarea:focus {
+  outline: none !important;
+  border-bottom: 1px solid gray;
+}
+
+.tweet-form-options {
+  width: 100%;
+  display: flex;
+  margin-right: 2.5rem;
+  margin-top: 1rem;
+}
+
+.tweet-form-btn {
+  background-color: rgb(35, 186, 246);
+  border-radius: 2rem;
+  font-weight: 600;
+  border: none;
+  color: white;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+
+.tweet-form-btn:hover {
+  cursor: pointer;
+  background: rgb(8, 128, 176);
+}
+
+.tweet-link-wrapper {
+  text-decoration: none;
+  color: white;
+}
+
+.tweet-form-imageupload img {
+  width: 5rem;
+}
+
+.tweet-container {
+  border-bottom: 1px solid gray;
+  padding: 0.5rem;
+}
+
+.tweet-container:hover {
+  background-color: rgba(24, 24, 24, 0.5);
+}
+
+.tweet-left {
+  width: 3rem;
+}
+
+.tweet-left img {
+  margin-top: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+}
+
+.tweet-right {
+  width: 90%;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tweet-author {
+  display: flex;
+}
+
+.tweet-author-name a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.tweet-author-name a:hover {
+  text-decoration: underline;
+}
+
+.tweet-author-handle, .tweet-createdAt {
+  color: gray;
+}
+
+.tweet-content {
+  margin-top: 0.2rem;
+  width: 100%;
+  display: flex;
+}
+
+.tweet-content img {
+  border-radius: 0.5rem;
+}
+
+.tweet-buttons {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  gap: 20%;
+  color: gray;    
+}
+
+.comment-button {
+  text-decoration: none;
+  color: gray;
+}
+
+.comment-button:hover {
+  color: royalblue !important;
+}
+
+.like-button-unliked:hover {
+  color: rgb(252, 84, 84);
+}
+
+.unlike-heart {
+  color: rgb(252, 84, 84);
+}
+
+.unlike-heart:hover {
+  color: gray;
+}
+
+
+.tweet-buttons-post-page {
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  padding: 1rem 0 1rem 0;
+  font-size: 1.2rem;
+  justify-content: space-evenly;
+}
+
+.tweet-buttons-post-page:hover {
+  cursor: pointer;
+}
+
+.tweet-buttons:hover {
+  cursor: pointer;
+}
+
+.tweet-buttons-text {
+  margin-left: 0.5rem;
+}
+
+.modal {
+  margin-top: 10% !important;
+}
+
+.modal-header button {
+  color: white !important;
+}
+
+
+.modal-content .tweet-form-container {
+  border-bottom: 1px solid white;
+}
+
+.modal-profile-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.message-top {
+  height: 30%;
+  border-bottom: 1px solid gray;
+  padding: 2rem 0 2rem 0;
+}
+
+.message-top span {
+  color: gray;
+}
+
+.message-top img{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 3rem;
+  margin-bottom: 1rem;
+}
+
+.message-main {
+  height: 100%;
+  margin-bottom: 3rem;
+}
+
+.dm-message-sent {
+  margin: 0.5rem;
+  background-color:rgb(35, 186, 246);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 1rem;
+  max-width: 50%;
+}
+
+.dm-message-recvd {
+  margin: 0.5rem;
+  background-color: gray;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 1rem;
+  max-width: 50%;
+}
+
+.message-form-container {
+  border-top: 1px solid gray;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  margin-right: 25rem;
+  width: calc(100vw - 50rem);
+}
+
+.message-form {
+  margin: 0.5rem 1rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.message-form input {
+  border-radius: 3rem;
+  text-indent: 1rem;
+  width: 90%;
+}
+
+.message-form button {
+  border-radius: 3rem;
+  background: none;
+  border: none;
+  color: white;
+}
+
+#followersModal, #followingModal, #messagesModal {
+  position: absolute;
+}
+
+.modal-footer {
+  border: 0 !important;
+}
+
+.suggested-follow-button, .suggested-unfollow-button {
+  margin-top: 0.5rem;
+  height: 2.2rem;
+  width: 30%;
+  border-radius: 2rem;
+  border: 0;
+  font-weight: 500;
+}
+
+.suggested-follow-button:hover {
+  background-color: rgb(231, 230, 230);
+}
+
+.suggested-unfollow-button {
+  background-color:rgb(35, 186, 246);
+  color: white;
+}
+
+.suf-text-unfollow {
+  display: none;
+  color: black;
+}
+
+.suggested-unfollow-button:hover {
+  background-color: rgb(252, 84, 84);
+}
+
+.suggested-unfollow-button:hover .suf-text-following {
+  display: none;
+}
+
+.suggested-unfollow-button:hover .suf-text-unfollow {
+  display: block;
+}
+
+.paginate-button {
+  color: white;
+  background-color: rgb(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 1rem;
+}
+
+.paginate-button:disabled {
+  background-color: rgb(0, 0, 0, 0.5);
+  color: black
+}
+
+
+@media (max-width: 1200px) {
+  .sidebar {
+      width: 5rem;
+  }
+  
+
+  main {
+      margin-left: 5rem;
+  }
+
+  .navi-text {
+      display: none;
+  }
+
+  .navi-item {
+      margin-left: 0;
+      justify-content: center;
+  }
+
+  .post-button {
+      display: none;
+  }
+
+  .sidebar-user-info {
+      display: none;
+  }
+
+  .sidebar-user-container {
+      padding: 0;
+  }
+
+  .user-dropup {
+      display: none;
+  }
+
+  .message-form-container {
+    width: calc(100vw - 30rem);
+  }
+
+}
+
+@media (max-width: 992px) {
+  main {
+      margin-right: 0;
+  }
+
+  .explore-bar {
+      display: none;
+  }
+
+  .message-form-container {
+    margin-right: 0rem;
+    width: calc(100vw - 5rem);
+  }
+
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 0;
+    margin-top: 3rem;
+  }
+
+  .sidebar {
+    z-index: 9000;
+    top: 0;
+    width: 100vw;
+    height: 3rem;
+    border-bottom: 1px solid gray;
+    border-right: 0;
+  }
+
+  .sidebar-menu {
+    margin-right: 80%;
+    border-right: 1px solid gray;
+    background: black;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: 350ms ease-out;
+    padding-top: 10rem;
+  }
+
+  .sidebar-menu[data-visible="true"] {
+    transform: translateX(0);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .mobile-nav-logo {
+    display: block;
+  }
+
+  .main-content-menu {
+    top: 3rem !important;
+  }
+
+  .message-form-container {
+    margin-right: 0rem;
+    width: 100vw;
+  }
+
+
 }
